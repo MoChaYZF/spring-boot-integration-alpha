@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.yangzefeng.integration.carousel.mapper.CarouselMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.yangzefeng.integration.carousel.entity.Carousel">
+        <id column="id" property="id" />
+        <result column="image" property="image" />
+        <result column="sort" property="sort" />
+        <result column="create_time" property="createTime" />
+        <result column="modify_time" property="modifyTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, image, sort, create_time, modify_time
+    </sql>
+
+</mapper>
