@@ -2,7 +2,7 @@
 spring:
   application:
     name: spring-boot-integration
-  ## Thymeleaf相关配置
+  # Thymeleaf相关配置
   thymeleaf:
     # 开发时，关闭页面缓存
     cache: false
@@ -30,38 +30,38 @@ spring:
         min-idle: 0
   datasource:
     druid:
-      # \u914D\u7F6E\u76D1\u63A7\u7EDF\u8BA1\u62E6\u622A\u7684filters\uFF0C\u53BB\u6389\u540E\u76D1\u63A7\u754C\u9762sql\u65E0\u6CD5\u7EDF\u8BA1\uFF0C'wall'\u7528\u4E8E\u9632\u706B\u5899
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
       # spring.datasource.druid.filters=stat,wall,slf4j
       filters: stat,slf4j
-      # \u521D\u59CB\u5316\u65F6\u5EFA\u7ACB\u7269\u7406\u8FDE\u63A5\u7684\u4E2A\u6570
+      # 初始化时建立物理连接的个数
       initial-size: 5
-      # \u8FDE\u63A5\u6C60\u6700\u5C0F\u7A7A\u95F2\u8FDE\u63A5\u6570\u91CF
+      # 连接池最小空闲连接数量
       min-idle: 5
-      # \u8FDE\u63A5\u6C60\u6700\u5927\u8FDE\u63A5\u6570\u91CF
+      # 连接池最大连接数量
       max-active: 20
-      # \u83B7\u53D6\u8FDE\u63A5\u65F6\u6700\u5927\u7B49\u5F85\u65F6\u95F4
+      # 获取连接时最大等待时间
       max-wait: 60000
-      # \u914D\u7F6Eaop\u8DEF\u5F84
-      # TODO \u66FF\u6362\u4E3A\u81EA\u5DF1\u6240\u9700\u8981\u5207\u9762\u7684\u8DEF\u5F84
+      # 配置aop路径
+      # TODO 替换为自己真实项目路径
       aop-patterns: top.yangzefeng.integration.*.service.*
-      # \u901A\u8FC7connectProperties\u5C5E\u6027\u6765\u6253\u5F00mergeSql\u529F\u80FD\uFF1B\u6162SQL\u8BB0\u5F55
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
       connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       filter:
         stat:
-          # \u662F\u5426\u5F00\u542F\u6162sql\u67E5\u8BE2\u76D1\u63A7
+          # 是否开启慢sql查询监控
           log-slow-sql: true
-          # \u6162SQL\u6267\u884C\u65F6\u95F4
+          # 慢SQL执行时间
           slow-sql-millis: 2000
-      # \u914D\u7F6E\u4E00\u4E2A\u8FDE\u63A5\u5728\u6C60\u4E2D\u6700\u5C0F\u751F\u5B58\u7684\u65F6\u95F4\uFF0C\u5355\u4F4D\u662F\u6BEB\u79D2
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
       min-evictable-idle-time-millis: 300000
-      # \u6253\u5F00PSCache\uFF0C\u5E76\u4E14\u6307\u5B9A\u6BCF\u4E2A\u8FDE\u63A5\u4E0APSCache\u7684\u5927\u5C0F
+      # 打开PSCache，并且指定每个连接上PSCache的大小
       pool-prepared-statements: true
       max-pool-prepared-statement-per-connection-size: 20
-      # \u914D\u7F6E\u95F4\u9694\u591A\u4E45\u624D\u8FDB\u884C\u4E00\u6B21\u68C0\u6D4B\uFF0C\u68C0\u6D4B\u9700\u8981\u5173\u95ED\u7684\u7A7A\u95F2\u8FDE\u63A5\uFF0C\u5355\u4F4D\u662F\u6BEB\u79D2
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
       time-between-eviction-runs-millis: 60000
-      # \u5408\u5E76\u591A\u4E2ADruidDataSource\u7684\u76D1\u63A7\u6570\u636E
+      # 合并多个DruidDataSource的监控数据
       use-global-data-source-stat: true
-      # \u7528\u6765\u68C0\u6D4B\u8FDE\u63A5\u662F\u5426\u6709\u6548\u7684sql\uFF0C\u8981\u6C42\u662F\u4E00\u4E2A\u67E5\u8BE2\u8BED\u53E5
+      # 用来检测连接是否有效的sql，要求是一个查询语句
       validation-query: SELECT 'x'
 mybatis-plus:
   configuration:
