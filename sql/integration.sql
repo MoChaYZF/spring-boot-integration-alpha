@@ -13,3 +13,7 @@ CREATE TABLE `tbl_carousel`  (
   `modify_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
   PRIMARY KEY `pk_id` (`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '轮播图数据表' ROW_FORMAT = Dynamic;
+
+-- 轮播图数据表数据
+INSERT INTO `tbl_carousel` VALUES ('1', 'https://wx2.sinaimg.cn/mw690/538d3eabgy1gccic17lijj20qo0zs1fj.jpg', '1', '2020-03-03 09:29:14', '2020-03-03 09:29:14');
+INSERT INTO `tbl_carousel` VALUES ('2', 'https://wx1.sinaimg.cn/thumb180/ac56c7cbly1g3jgye6921j20zk0k0dll.jpg', '2', '2020-03-03 09:30:07', '2020-03-03 09:30:07');
