@@ -1,5 +1,5 @@
 # Spring Boot 工具集成箱项目说明
-`JDK版本：JDK8，Spring Boot 版本：2.1.10`
+`JDK版本：JDK8，Spring Boot 版本：2.2.6`
 ## 1. 实现Redis分布式限流功能
 ## 2. 实现LocalDateTime全局序列化与反序列化功能
 ## 3. 实现MyBatis-Plus性能分析插件集成
