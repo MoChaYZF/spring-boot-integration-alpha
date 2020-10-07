@@ -33,3 +33,15 @@
 ## 15. 添加IPV4与long类型互转工具类
 ## 16. 添加UserAgentUtils工具
 ## 17. 解决请求url携带了特殊符号的参数，导致出现状态码400的错误
+
+## 版本说明
+
+| 组件           | 使用版本      |
+| -------------- | ------------- |
+| Spring Boot    | 2.2.6.RELEASE |
+| MyBatis Plus   | 3.3.1         |
+| druid          | 1.1.21        |
+| fastjson       | 1.2.73        |
+| jedis          | 3.2.0         |
+| aliyun-sdk-oss | 3.10.2        |
+
