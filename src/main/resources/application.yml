@@ -67,7 +67,7 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
-  type-aliases-package: top.yangzefeng.integration.carousel.entity.Carousel
+  type-aliases-package: top.yangzefeng.integration.carousel.domain.entity.Carousel
   mapper-locations: classpath*:/mapper/**/*.xml
 lua:
   ratelimit:

@@ -1,8 +1,8 @@
 package top.yangzefeng.integration.carousel.service;
 
-import top.yangzefeng.integration.carousel.dto.CarouselDTO;
-import top.yangzefeng.integration.carousel.entity.Carousel;
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.yangzefeng.integration.carousel.domain.dto.CarouselDTO;
+import top.yangzefeng.integration.carousel.domain.entity.Carousel;
 import top.yangzefeng.integration.common.page.PageQuery;
 import top.yangzefeng.integration.common.page.PageResult;
 

@@ -1,4 +1,4 @@
-package top.yangzefeng.integration.carousel.entity;
+package top.yangzefeng.integration.carousel.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

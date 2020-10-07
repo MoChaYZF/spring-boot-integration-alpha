@@ -1,11 +1,11 @@
-package top.yangzefeng.integration.carousel.dto;
+package top.yangzefeng.integration.carousel.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import top.yangzefeng.integration.carousel.entity.Carousel;
+import top.yangzefeng.integration.carousel.domain.entity.Carousel;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

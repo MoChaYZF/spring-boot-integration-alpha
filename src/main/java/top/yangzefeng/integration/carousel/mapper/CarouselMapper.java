@@ -1,7 +1,7 @@
 package top.yangzefeng.integration.carousel.mapper;
 
-import top.yangzefeng.integration.carousel.entity.Carousel;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import top.yangzefeng.integration.carousel.domain.entity.Carousel;
 
 /**
  * 轮播图 Mapper 接口

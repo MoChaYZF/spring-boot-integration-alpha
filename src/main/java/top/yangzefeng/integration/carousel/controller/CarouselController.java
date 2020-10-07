@@ -7,7 +7,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.yangzefeng.integration.carousel.dto.CarouselDTO;
+import top.yangzefeng.integration.carousel.domain.dto.CarouselDTO;
 import top.yangzefeng.integration.carousel.service.CarouselService;
 import top.yangzefeng.integration.common.ResultDTO;
 import top.yangzefeng.integration.common.page.PageQuery;
@@ -35,7 +35,7 @@ public class CarouselController {
      * @return 轮播图分页数据
      */
     @GetMapping
-    public ResultDTO carouselList(CarouselDTO carouselDTO, PageQuery pageQuery) {
+    public ResultDTO<PageResult<CarouselDTO>> carouselList(CarouselDTO carouselDTO, PageQuery pageQuery) {
         PageResult<CarouselDTO> bonusFlowsDtoPage = carouselService.findCarouselDetailPage(carouselDTO, pageQuery);
         return ResultDTOUtils.success(bonusFlowsDtoPage);
     }

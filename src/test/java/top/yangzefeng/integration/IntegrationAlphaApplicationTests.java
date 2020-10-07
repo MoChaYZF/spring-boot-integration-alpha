@@ -2,25 +2,52 @@ package top.yangzefeng.integration;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.TableFieldInfo;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import top.yangzefeng.integration.carousel.domain.entity.Carousel;
+import top.yangzefeng.integration.carousel.mapper.CarouselMapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
-@SpringBootTest
+@Slf4j
 @RunWith(SpringRunner.class)
-class IntegrationAlphaApplicationTests {
+@SpringBootTest(classes = IntegrationAlphaApplication.class)
+public class IntegrationAlphaApplicationTests {
+    @Autowired
+    private CarouselMapper carouselMapper;
+
     @Test
-    void contextLoads() {
+    public void contextLoads() {
+    }
+
+    /**
+     * 测试QueryWrapper的select方法使用
+     */
+    @Test
+    public void testSelect() {
+        LambdaQueryWrapper<Carousel> carouselDTOQueryWrapper = Wrappers.lambdaQuery();
+        // QueryWrapper的select方法就是用于指定要查询的数据列
+        // info.getProperty().equals("createTime") 表示 实体类 字段名
+        // info.getColumn().equals("modify_time") 表示 数据表 数据列
+        Predicate<TableFieldInfo> selectPredicate = info -> !info.getProperty().equals("createTime") && !info.getColumn().equals("modify_time");
+        carouselDTOQueryWrapper.select(Carousel.class, selectPredicate);
+        List<Carousel> carouselList = carouselMapper.selectList(carouselDTOQueryWrapper);
+        log.info("carousel = {}", carouselList);
     }
 
     /**
