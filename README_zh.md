@@ -44,4 +44,4 @@
 | fastjson       | 1.2.73        |
 | jedis          | 3.2.0         |
 | aliyun-sdk-oss | 3.10.2        |
-
+| hutool-core    | 5.5.8         |

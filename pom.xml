@@ -21,6 +21,7 @@
         <thymeleaf-layout-dialect.version>2.3.0</thymeleaf-layout-dialect.version>
         <druid.version>1.1.21</druid.version>
         <mybatis-plus.version>3.3.1</mybatis-plus.version>
+        <hutool-core.version>5.5.8</hutool-core.version>
     </properties>
 
     <dependencies>
@@ -177,7 +178,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-core</artifactId>
-            <version>5.0.2</version>
+            <version>${hutool-core.version}</version>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
