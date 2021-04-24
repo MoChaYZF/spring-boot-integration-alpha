@@ -11,7 +11,7 @@
 
     <groupId>top.yangzefeng</groupId>
     <artifactId>spring-boot-integration-alpha</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <name>spring-boot-integration-alpha</name>
     <description>Spring Boot 工具集成箱</description>
 
@@ -22,9 +22,43 @@
         <druid.version>1.1.21</druid.version>
         <mybatis-plus.version>3.3.1</mybatis-plus.version>
         <hutool-core.version>5.5.8</hutool-core.version>
+        <knife4j.version>2.0.8</knife4j.version>
+        <powermock.version>2.0.9</powermock.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <jmh.version>1.25</jmh.version>
     </properties>
 
     <dependencies>
+        <!-- JMH基准测试框架依赖 -->
+        <!-- The jmh is a Java harness for building, running,
+        and analysing nano/micro/macro benchmarks written in Java and other languages targeting the JVM. -->
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>${jmh.version}</version>
+        </dependency>
+        <!-- JMH benchmark generator, based on annotation processors. -->
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>${jmh.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- PowerMock依赖 -->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito2</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- 最自由的ip地址查询库 -->
         <dependency>
             <groupId>org.lionsoul</groupId>
@@ -118,6 +152,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -162,16 +202,11 @@
             <version>3.8.3</version>
         </dependency>
 
-        <!-- Swagger依赖 -->
+        <!-- Knife4j依赖 -->
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>${knife4j.version}</version>
         </dependency>
 
         <!-- 第三方通用工具依赖 -->
@@ -197,6 +232,11 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons-collections4.version}</version>
         </dependency>
 
         <dependency>

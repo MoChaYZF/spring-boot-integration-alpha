@@ -19,6 +19,7 @@
 - (3) 获取请求uri
 - (4) 获取响应对象
 ## 10. 集成Swagger文档
+- (1) 使用Knife4j作为前端Swagger界面使用
 ## 11. 集成LogBack日志文件输出
 - (1) 异步输入提升性能
 ## 12. 集成个性化自定义Banner
@@ -45,3 +46,4 @@
 | jedis          | 3.2.0         |
 | aliyun-sdk-oss | 3.10.2        |
 | hutool-core    | 5.5.8         |
+| knife4j        | 2.0.8         |

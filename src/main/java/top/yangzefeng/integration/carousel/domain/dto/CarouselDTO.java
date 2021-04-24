@@ -2,6 +2,7 @@ package top.yangzefeng.integration.carousel.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -16,6 +17,7 @@ import java.time.LocalDateTime;
  * @author MoCha
  * @date 2020/3/3
  */
+@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

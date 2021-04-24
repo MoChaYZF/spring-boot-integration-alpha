@@ -31,6 +31,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class CarouselServiceImpl extends ServiceImpl<CarouselMapper, Carousel> implements CarouselService {
+
     /**
      * 获取轮播图分页数据
      *

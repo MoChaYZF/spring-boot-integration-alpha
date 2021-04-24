@@ -1,5 +1,8 @@
 package top.yangzefeng.integration.common.config;
 
+import com.github.xiaoymin.knife4j.spring.extension.OpenApiExtensionResolver;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -9,7 +12,7 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 import java.util.Collections;
 
@@ -20,9 +23,12 @@ import java.util.Collections;
  * @date 2019/5/24
  */
 @Configuration
-@EnableSwagger2
+@EnableSwagger2WebMvc
 @Profile({"test", "dev"})
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class SwaggerConfig {
+    private final OpenApiExtensionResolver openApiExtensionResolver;
+
     @Bean
     public Docket apiDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -31,7 +37,8 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build()
                 // 将ApiInfo加入到Docket中
-                .apiInfo(getApiInfo());
+                .apiInfo(getApiInfo())
+                .extensions(openApiExtensionResolver.buildSettingExtensions());
     }
 
     private ApiInfo getApiInfo() {

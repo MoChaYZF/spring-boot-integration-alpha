@@ -1,6 +1,6 @@
 # 开发环境配置文件
 server:
-  port: 9091
+  port: 9999
 spring:
   datasource:
     # TODO 替换为自己的真实数据库连接信息
@@ -18,3 +18,9 @@ management:
       exposure:
         include: '*'
         exclude: env,beans
+knife4j:
+  enable: true
+  setting:
+    enableFooter: false
+    enableFooterCustom: true
+    footerCustomContent: Copyright © 2021-[把余生熬熟]
